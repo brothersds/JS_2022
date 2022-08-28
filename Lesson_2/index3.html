@@ -21,7 +21,36 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function calculationUser(number_one, number_two) {
+
+    if (number_one > 0 && number_two > 0) {
+        return '1';
+    } else if (number_one < 0 && number_two < 0) {
+        return '2';
+    } else if ((number_one > 0 && number_two < 0) || (number_one < 0 && number_two > 0))  {
+        return '3';
+    }
+  }
+
+  function outputResult(result, number_one, number_two) {
+    switch (result) {
+        case '1':
+            return (number_one - number_two);
+        case '2':
+            return (number_one * number_two);
+        case '3':
+            return (number_one + number_two);
+        default:
+            return
+    }
+  }
+
+const number_one = +prompt('Введите первое число');
+const number_two = +prompt('Введите второе число');
+const result = calculationUser(number_one, number_two);
+const outputUser = outputResult(result, number_one, number_two);
+console.log(outputUser);
+
 </script>
 </body>
 </html>
