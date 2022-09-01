@@ -31,7 +31,40 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function inputNumber() {
+    const numberUser = +prompt("Введите число: ");
+    return numberUser;
+  }
+
+  function addition(number_one, number_two) {
+    return (number_one + number_two);
+  }
+
+  function subtraction(number_one, number_two) {
+    if (number_one === number_two) {
+      return '0';
+    } else if (number_one > number_two) {
+      return (number_one - number_two);
+    } else return (number_two - number_one);
+  }
+
+
+  function multiplication(number_one, number_two) {
+    return (number_one * number_two);
+  }
+
+  function devide(number_one, number_two) {
+    return (number_one / number_two);
+  }
+
+  const number_one = inputNumber();
+  const number_two = inputNumber();
+
+  console.log(addition(number_one, number_two));
+  console.log(subtraction(number_one, number_two));
+  console.log(multiplication(number_one, number_two));
+  console.log(devide(number_one, number_two));
+
 </script>
 </body>
 </html>
