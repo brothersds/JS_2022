@@ -32,7 +32,52 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function inputNumber() {
+    const numberUser = +prompt("Введите число: ");
+    return numberUser;
+  }
+
+function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+        case '+':
+            return addition(arg1, arg2);
+        case '-':
+            return subtraction(arg1, arg2);
+        case '*':
+            return multiplication(arg1, arg2);
+        case '/':
+            return devide(arg1, arg2);
+        default:
+            return
+        }
+    }
+
+  function addition(number_one, number_two) {
+    return (number_one + number_two);
+  }
+
+  function subtraction(number_one, number_two) {
+    if (number_one === number_two) {
+      return '0';
+    } else if (number_one > number_two) {
+      return (number_one - number_two);
+    } else return (number_two - number_one);
+  }
+
+  function multiplication(number_one, number_two) {
+    return (number_one * number_two);
+  }
+
+  function devide(number_one, number_two) {
+    return (number_one / number_two);
+  }
+
+  const number_one = inputNumber();
+  const number_two = inputNumber();
+  let operation = prompt("Введите знак операции +, -, *, /");
+
+  console.log(mathOperation(number_one, number_two, operation));
+
 </script>
 </body>
 </html>
