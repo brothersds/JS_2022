@@ -42,8 +42,36 @@
 -->
 <script>
     "use strict";
-  
-    // Здесь пишем решение, данный комментарий необходимо стереть.
+  // Функция-конструктор в стиле ES5
+    function PostES5(name, post) {
+        this.name = name;
+        this.post = post;
+        this.updatePost = new Data();
+    }
+
+    // Метод edit для изменения поста в стиле ES5
+    PostES5.prototype.edit = function(post) {
+        this.post = post;
+        this.updatePost = new Data();
+    }
+
+    // Функция-конструктор закрепленного поста в стиле ES5
+    function AttachedPostES5(name, post) {
+        PostES5.call(this, name, post);
+        this.highlighted = false;
+    }
+
+    // Создание объекта для наследования методов стиле ES5
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.conctructor = AttachedPostES5;
+
+    // Создание метода makeTextHighlighted в стиле ES5
+    AttachedPostES5.prototype.makeTextHighlighted = function() {
+        this.highlighted = true;
+        this.updatePost = new Data();
+    }
+
+    
   </script>
   </body>
   </html>
