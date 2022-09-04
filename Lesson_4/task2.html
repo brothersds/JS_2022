@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
 <!--
 Обязательное задание.
 
@@ -46,13 +53,13 @@
     function PostES5(name, post) {
         this.name = name;
         this.post = post;
-        this.updatePost = new Data();
+        this.date = new Date();
     }
 
     // Метод edit для изменения поста в стиле ES5
     PostES5.prototype.edit = function(post) {
         this.post = post;
-        this.updatePost = new Data();
+        this.date = new Date();
     }
 
     // Функция-конструктор закрепленного поста в стиле ES5
@@ -68,10 +75,68 @@
     // Создание метода makeTextHighlighted в стиле ES5
     AttachedPostES5.prototype.makeTextHighlighted = function() {
         this.highlighted = true;
-        this.updatePost = new Data();
+        this.date = new Date();
     }
 
-    
+    //----------------------------------------------------------
+
+    // Класс для поста в стиле ES5
+    class PostES6 {
+        constructor(name, post) {
+            this.name = name;
+            this.post = post;
+            this.date = new Date();
+        }
+
+        // Метод edit для изменения поста в стиле ES6
+        edit(post) {
+            this.post = post;
+            this.date = new Date();
+        }
+    }
+
+    // Класс для закрепленного поста в стиле ES6
+    class AttachedPostES6 extends PostES6 {
+        highlighted = false;
+
+        // Создание метода makeTextHighlighted в стиле ES6
+        makeTextHighlighted() {
+            this.highlighted = true;
+            this.date = new Date();
+        }
+    }
+
+  // Решение в стиле ES5
+  const postES5 = new PostES5('Автор поста ES5', 'Текст поста ES5');
+  console.log(postES5);
+
+  postES5.edit('Новый текст поста ES5');
+  console.log(postES5);
+
+  const attachedES5 = new AttachedPostES5('Автор поста ES5',
+  'Закрепленный текст ES5');
+  console.log(attachedES5);
+
+  attachedES5.makeTextHighlighted();
+  attachedES5.edit('Подсвеченный закрепленный текст ES5');
+  console.log(attachedES5);
+
+  //---------------------------------------------------------
+
+  // Решение в стиле ES6
+  const postES6 = new PostES6('Автор поста ES6', 'Текст поста ES6');
+  console.log(postES6);
+
+  postES6.edit('Новый текст поста ES6');
+  console.log(postES6);
+
+  const attachedPostES6 = new AttachedPostES6('Автор поста ES6',
+  'Закрепленный текст ES6');
+  console.log(attachedPostES6);
+
+  attachedPostES6.makeTextHighlighted();
+  attachedPostES6.edit('Подсвеченный закрепленный текст ES6');
+  console.log(attachedPostES6);
   </script>
   </body>
   </html>
