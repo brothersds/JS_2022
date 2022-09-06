@@ -56,13 +56,15 @@
   1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все
   теги будут созданы браузером.
   */
-
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log("все теги прогрузились");
+  });
 
   /*
   2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все
   ресурсы страницы будут загружены.
   */
-
+  window.onload = () => console.log("страница загрузилась");
 
   /*
   3. При клике на какой-либо тег на странице в консоль должно выводиться
@@ -73,13 +75,25 @@
   которому был совершен клик.
   Необходимо использовать делегирование.
   */
-
+  document.addEventListener('click', function(event) {
+    const elemFirst = event.target.classList.contains('super_element');
+    let elemSecond;
+    if (elemFirst) {
+        elemSecond = 'присутствует';
+    } else {
+        elemSecond = 'остутствует';
+    }
+    console.log(`Класс "super_element" ${elemSecond} в элементе "${event.target.tagName.toLowerCase()}".`);
+    });
 
   /*
   4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение:
   "Вы навели на textarea."
    */
-
+  document.querySelector('textarea');
+  document.addEventListener('mouseover', () => {
+    console.log("Вы навели на textarea.");
+  });
 
   /*
   5. Необходимо повесить событие клика на тег ul. В обработчике события в
@@ -88,19 +102,29 @@
   Если клик был не по кнопке, то ничего выводить не нужно.
   Необходимо использовать делегирование.
    */
-
+   document.querySelector('ul').addEventListener('click', event => {
+    if (event.target.tagName != 'BUTTON') {
+        return;
+    }
+    console.log(event.target.textContent);
+   });
 
   /*
   6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только
   потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul?
   Ответ необходимо написать здесь же, под этим комментарием, своими словами.
   */
-
+  /*События повешаны на разные тэги, при всплытии сначала идет тэг ul, а потом 
+  document. За счет делегирования событие отрабатывается через детей.
+  */
 
   /*
   7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
    */
-
+  const elemThird = document.querySelectorAll('li:nth-child(2n)');
+  elemThird.forEach(element => {
+    element.style.backgroundColor = "orange"
+  });
 </script>
 </body>
 </html>
