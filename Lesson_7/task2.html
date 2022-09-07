@@ -26,6 +26,8 @@
 <div class="products"></div>
 
 <script>
+  "use strict"; // добавил и ниже отступ
+
   /*
   1. Программист Паша уволился с работы и не закончил задачу.
   Задача состояла в том, чтобы при клике на какую-либо кнопку в теге header
@@ -77,13 +79,17 @@
     ],
   };
 
-  const productsEl = document.querySelector('products');
+  //.products
+  //target
+  //menuButton
+  //.join("")
+  const productsEl = document.querySelector('.products');
   document.querySelector('header').addEventListener('click', event => {
-    if (!event.currentTarget.classList.contains('.menuButton')) {
+    if (!event.target.classList.contains('menuButton')) {
       return;
     }
-    productsEl.innerHTML = products[event.currentTarget.dataset.type]
-      .map(product => product.getProductMarkup());
+    productsEl.innerHTML = products[event.target.dataset.type]
+      .map(product => product.getProductMarkup()).join("");
   });
 
 </script>
