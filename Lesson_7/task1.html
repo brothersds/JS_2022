@@ -59,7 +59,18 @@
     X6: "Знаю, программирование это нелегко.",
     H99: "Однако, программирование, в итоге, принесет свои плоды.",
   };
-
+  let elNavLink = document.querySelector('.active');
+  document.querySelector('.nav-tabs').addEventListener('click', event => {
+    if (!event.target.classList.contains('nav-link')) {
+        return;
+    }
+    elNavLink.classList.remove('active');
+    event.target.classList.add('active');
+    elNavLink = event.target;
+    //аттрибуты HTML доступны как свойства в DOM-объектах через dataset
+    document.querySelector('div.text')
+    .textContent = panelText[event.target.parentElement.dataset.text];
+  });
 
   /*
   2. Необходимо сделать так, чтобы при изменении input'а менялся и размер шрифта
