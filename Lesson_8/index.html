@@ -23,8 +23,22 @@
 
                 <span class="cartIconWrap">
                     <img class="cartIcon" src="images/cart.png" alt="">
-                    <span>5</span>
+                    <span>0</span>
                 </span>
+<!--ПТ Создал общий html для окошка корзины: -->
+                <div class="basket hidden">
+                    <div class="basketRow basketHeader">
+                        <div>Название товара</div>
+                        <div>Количество</div>
+                        <div>Цена за шт.</div>
+                        <div>Итого</div>
+                    </div>
+
+                    <div class="basketTotal">
+                        Товаров в корзине на сумму:
+                        $<span class="basketTotalValue">0</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -164,9 +178,9 @@
                 </div>
 
             </div>
-
-            <div class="featuredItem">
-
+<!--Изменил немного html у самих товаров, каждому товару добавил data-атрибуты
+с id, ценой и названием товара-->
+            <div class="featuredItem" data-id="1" data-name="ELLERY X M'O CAPSULE" data-price="52">
                 <div class="featuredImgWrap">
                     <img src="images/featured/2.jpg" alt="">
                     <div class="featuredImgDark">
