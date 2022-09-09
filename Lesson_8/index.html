@@ -179,12 +179,19 @@
 
             </div>
 <!--Изменил немного html у самих товаров, каждому товару добавил data-атрибуты
-с id, ценой и названием товара-->
-            <div class="featuredItem" data-id="1" data-name="ELLERY X M'O CAPSULE" data-price="52">
+с id, ценой и названием товара
+Чтобы можно было искать все нужные значения внутри
+верстки товара, но верстка часто может меняться и постоянно при изменении
+верстки править js не хочется, поэтому все данные о товаре вынесли выше, в
+тег-обертку для товара.
+Каждой кнопке добавления товара поставил класс addToCart (для упрощения жизни).
+Также немного переименовал товары, чтоб у них были разные названия и поменял
+цены, чтоб они также отличались-->
+            <div class="featuredItem" data-id="2" data-name="ELLERY X M'O" data-price="42">
                 <div class="featuredImgWrap">
                     <img src="images/featured/2.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -201,18 +208,18 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $42.00
                     </div>
                 </div>
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="3" data-name="ELLERY X" data-price="38">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/3.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -229,18 +236,18 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $38.00
                     </div>
                 </div>
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="4" data-name="ELLERY" data-price="12">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/4.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -257,18 +264,18 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $12.00
                     </div>
                 </div>
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="5" data-name="M'O CAPSULE" data-price="33">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/5.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -285,17 +292,17 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $33.00
                     </div>
                 </div>
 
             </div>
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="6" data-name="CAPSULE" data-price="49">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/6.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -312,7 +319,7 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $49.00
                     </div>
                 </div>
 
