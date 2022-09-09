@@ -3,8 +3,8 @@
 let fitlerPopup = document.querySelector('.filterPopup');
 let fitlerLabel = document.querySelector('.filterLabel');
 let filterIcon = document.querySelector('.filterIcon');
-
-fitlerLabel.addEventListener('click', function() {
+//Замена на стрелочную функцию
+fitlerLabel.addEventListener('click', () => {
     fitlerPopup.classList.toggle('hidden');
     fitlerLabel.classList.toggle('filterLabelPink');
     filterIcon.classList.toggle('filterIconPink');
